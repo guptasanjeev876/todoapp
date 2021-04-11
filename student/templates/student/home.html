@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>CRUD app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'student/css/bootstrap.css' %}">
+  
+</head>
+<body>
+    <div class='container'>
+        <h1> Welcome to Homepage</h1>
+        <form method = "POST" action="">
+            {% csrf_token %}
+            {{form.title}}
+            <input type= 'submit' name="task submitted">
+            
+        </form>
+        
+        {% for stu in task %}
+            <div>
+                <a href="{% url 'update_Task' stu.id %}">Update</a>
+                <a href="{% url 'delete' stu.id %}">delete</a>
+                <p>{{stu}}</p>
+            </div>
+        {% endfor %}
+
+    </div>
+    <script src="{% static 'student/js/bootstrap.js' %}"> </script>
+    <script src="{% static 'student/js/jquery.js' %}"> </script>
+    <script src="{% static 'student/js/popper.js' %}"> </script>
+</body>
+</html>
+

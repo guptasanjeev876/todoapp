@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>CRUD app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'student/css/bootstrap.css' %}">
+  
+</head>
+<body>
+    <div class='container'>
+        <p>Confirm for deletion {{item}}</p>
+        
+        <form method = "POST" action= "">
+            {% csrf_token %}
+            <input type="submit" name = "confirm">
+        </form>
+        <a href="{% url 'task'  %}" class="btn btn-success">Cancel</a>
+
+    </div>
+    <script src="{% static 'student/js/bootstrap.js' %}"> </script>
+    <script src="{% static 'student/js/jquery.js' %}"> </script>
+    <script src="{% static 'student/js/popper.js' %}"> </script>
+</body>
+</html>
+
+
